@@ -25,6 +25,8 @@ if (permission =="yes")
     cout << " What do you want to do? Select in the option below: \n[0] End the program\n[1] Know your zodiac sign\n[2] Check if your bithday is a leap year\n[3] Update your birthyear\n[4] Know your chinese zodiac animal\n";
     
     cin >> action;
+    
+    do {
     switch (action) {
     case 0:
         cout << "Program terminated.";
@@ -78,6 +80,8 @@ if (permission =="yes")
     default:
         break;
     }
+    }
+    while (action !=0);
     return 0;
     
 }
