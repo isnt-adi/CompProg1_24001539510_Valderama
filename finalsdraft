@@ -5,68 +5,69 @@ using namespace std;
 int main ()
 {
 
-string name, permission, zodiac, leapyear;
+string name, permission, zodiac, leapyear, options;
 string chinese [] = {"Rat", "Ox", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Goat", "Monkey", "Rooster", "Dog", "Pig"};
 int action, month, day, year, animal;
 
 cout << "Enter your name: ";
 cin >> name;
-
-cout << "Hi " << name << ". I want to know you more. Do you alow me to get your birthday? (yes/no) \n";
+cout << "Hi " << name << ". I want to know you more. Do you alow me to get your birthday? (yes/no) \nEnter here: ";
 cin >> permission;
 
 if (permission =="yes")
+{
     cout << "Enter your birth month(1-12): ";
     cin >> month;
     cout << "Enter your bith day(1-30): ";
     cin >> day;
     cout << "Enter your birth year: " ;
     cin >> year;
-    cout << " What do you want to do? Select in the option below: \n[0] End the program\n[1] Know your zodiac sign\n[2] Check if your bithday is a leap year\n[3] Update your birthyear\n[4] Know your chinese zodiac animal\n";
-    
+    options = "\n*************Start**************\nWhat do you want to do? Select in the option below: \n[0] End the program\n[1] Know your zodiac sign\n[2] Check if your bithday is a leap year\n[3] Update your birthyear\n[4] Know your chinese zodiac animal\nEnter here: ";
+    cout << options;
     cin >> action;
+}
     
     do {
     switch (action) {
     case 0:
-        cout << "Program terminated.";
+        cout << "Invalid answer, Program terminated.";
         break;
     case 1:
         if (month ==1 && day> 21 || month ==2 && day<19)
-            zodiac == "aquarius";
+            zodiac = "aquarius";
         else if (month ==2 && day> 20 || month ==3 && day<20)
-            zodiac == "pisces";
+            zodiac = "pisces";
         else if (month ==3 && day> 21 || month ==4 && day<20)
-            zodiac == "aries";
+            zodiac = "aries";
         else if (month ==4 && day> 21 || month ==5 && day<21)
-            zodiac == "taurus";
+            zodiac = "taurus";
         else if (month ==5 && day> 22 || month ==6 && day<21)
-            zodiac == "gemini";
+            zodiac = "gemini";
         else if (month ==6 && day> 22 || month ==7 && day<22)
-            zodiac == "cancer";
+            zodiac = "cancer";
         else if (month ==7 && day> 23 || month ==8 && day<23)
-            zodiac == "leo";
+            zodiac = "leo";
         else if (month ==8 && day> 24 || month ==9 && day<23)
-            zodiac == "virgo";
+            zodiac = "virgo";
         else if (month ==9 && day> 24 || month ==10 && day<23)
-            zodiac == "libra";
+            zodiac = "libra";
         else if (month ==10 && day> 24 || month ==11 && day<22)
-            zodiac == "scorpio";
+            zodiac = "scorpio";
         else if (month ==11 && day> 23 || month ==12 && day<21)
-            zodiac == "sagittarius";
+            zodiac = "sagittarius";
         else if (month ==12 && day> 22 || month ==1 && day<20)
-            zodiac == "capricorn";
-        cout << "You are a " << zodiac;
+            zodiac = "capricorn";
+        cout << "     <You are a " << zodiac << ">\n";
         break;
     case 2:
         if (year%4==0)
             leapyear = "a leap year.";
         else
             leapyear = "not a leap year."; 
-            cout << "Your birthday is " << leapyear;
+            cout << "     <Your birthday is " << leapyear << ">\n";
         break;
     case 3:
-        cout << "Enter your birth month(1-12): ";
+        cout << "\nEnter your birth month(1-12): ";
         cin >> month;
         cout << "Enter your bith day(1-30): ";
         cin >> day;
@@ -75,13 +76,17 @@ if (permission =="yes")
         break;
     case 4:
         animal = (year - 1900)%12;
-        cout << "Your chinese zodiac animal is " << chinese [animal];
+        cout << "     <Your chinese zodiac animal is " << chinese [animal] <<">\n";
         break;
     default:
         break;
     }
+     if (action != 0)
+     cout << options;
+     cin >> action;
     }
     while (action !=0);
+    cout << "\nProgram Terminated. Thank you!";
     return 0;
     
 }
