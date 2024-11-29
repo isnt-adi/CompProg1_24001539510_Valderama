@@ -6,7 +6,7 @@ int main() {
     string asterisk = "*****";
     for (int i = 5; i > 0; i--) {
         cout << asterisk << "\n";
-        asterisk = asterisk.substr(0, i - 1);
+        asterisk = asterisk.substr(0, i);
     }
     return 0;
 }
