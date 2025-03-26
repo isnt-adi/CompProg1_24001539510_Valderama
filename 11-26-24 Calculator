@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int action;
+    double num1, num2;
+
+    cout << "Enter the first number: ";
+    cin >> num1;
+
+    cout << "Enter the second number: ";
+    cin >> num2;
+
+    cout << "\nChoose a number for the operation to be done:\n1. Add\n2. Subtract\n3. Multiply\n4. Divide\n\n";
+    cin >> action;
+
+    switch (action) {
+        case 1:
+            cout << "Addition\n" <<  num1 << " + " << num2 << " = " << num1 + num2;
+            break;
+
+        case 2:
+            cout << "Subtraction\n" << num1 << " - " << num2 << " = " << num1 - num2;
+            break;
+
+        case 3:
+            cout << "Multiplication\n" << num1 << " * " << num2 << " = " << num1 * num2;
+            break;
+
+        case 4:
+            if (num2 != 0)
+                cout << "Division\n" << num1 << " / " << num2 << " = " << num1 / num2;
+            else
+                cout << "Error.";
+            break;
+
+        default:
+            cout << "Invalid operation. Try Again.";
+            break;
+    }
+
+    return 0;
+}
